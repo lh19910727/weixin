@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#wrap{
+				width: 400px;
+				height: 400px;
+				position: relative;
+			}
+			#wrap div{
+				width: 50px;
+				height: 50px;
+				background: url(timg.jpg) no-repeat;
+				background-size: 150px 150px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 2s;
+			}
+			#wrap div:nth-of-type(1){
+				background-position: -50px 0;
+			}
+			#wrap div:nth-of-type(2){
+				background-position: -100px 0;
+			}
+			#wrap div:nth-of-type(3){
+				background-position: 0px -50px;
+			}
+			#wrap div:nth-of-type(4){
+				background-position: 0px -100px;
+			}
+			#wrap div:nth-of-type(5){
+				background-position: -50px -100px;
+			}
+			.action1 .love1{
+				transform:  translate(0px,250px) rotate(-45deg) scale(0.6);
+			}
+			.action1 .love2{
+				transform:  translate(10px,300px) rotate(-35deg) scale(1.2);
+			}
+			.action1 .love3{
+				transform:  translate(50px,50px) rotate(-15deg) scale(1.2);
+			}
+			.action1 .love4{
+				transform:  translate(30px,0px) rotate(-25deg) scale(0.8);
+			}
+			.action1 .love5{
+				transform:  translate(300px,300px) rotate(15deg) scale(1.2);
+			}
+			
+			
+			.action2 .love1{
+				transform:  translate(0px,300px) rotate(15deg) scale(0.8);
+			}
+			.action2 .love2{
+				transform:  translate(300px,300px) rotate(25deg) scale(1.2);
+			}
+			.action2 .love3{
+				transform:  translate(250px,50px) rotate(35deg) scale(1.2);
+			}
+			.action2 .love4{
+				transform:  translate(300px,0px) rotate(15deg) scale(0.6);
+			}
+			.action2 .love5{
+				transform:  translate(350px,100px) rotate(45deg) scale(1.2);
+			}
+			img{
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 1s;
+				opacity: 0;
+				border-radius: 10px;
+			}
+			.img1{
+				width: 90px;
+				height: 125px;
+				transform: translate(-250px,80px) rotate(0deg) scale(1);
+			}
+			.img2{
+				width: 90px;
+				height: 150px;
+				transform: translate(450px,100px) rotate(0deg) scale(1);
+			}
+			.img3{
+				width: 90px;
+				height: 150px;
+				transform: translate(350px,280px) rotate(0deg) scale(1);
+			}
+			.action2 .img1{
+				transform: translate(50px,80px) rotate(-10deg) scale(1.7);
+				opacity: 1;
+			}
+			.action1 .img2{
+				transform: translate(150px,180px) rotate(10deg) scale(1.5);
+				opacity: 1;
+			}
+			.action1 .img3{
+				transform: translate(300px,80px) rotate(15deg) scale(1.2);
+				opacity: 1;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="wrap" class="action1">
+			<div class="love1"></div>
+			<div class="love2"></div>
+			<div class="love3"></div>
+			<div class="love4"></div>
+			<div class="love5"></div>
+			<img class="img1" src="0.JPG"/>
+			<img class="img2" src="1.JPG"/>
+			<img class="img3" src="2.JPG"/>
+		</div>
+		<script>
+			var flag = true;
+			setInterval(function(){
+				
+				if(flag == true){
+		    		wrap.className = "action2";
+		    		flag=false
+		    	}else if(flag == false){
+		    		wrap.className = "action1";
+		    		flag = true;
+		    	}
+			},3000)
+		</script>
+	</body>
+</html>
